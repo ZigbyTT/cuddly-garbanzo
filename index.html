@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        var audio = new Audio("/audio/snd1.mp3");
+        audio.volume = 0.5;
+        audio.oncanplay = function(){
+            audio.play();
+        }
+        audio.loop = false;
+        
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>the nuttin buttin</title>
@@ -13,7 +22,7 @@
             height: 100vh;
             background-color: #121212; /* Dark background */
             color: #fff;
-            font-family: Arial, sans-serif;
+            font-family:monospace
         }
         button {
             padding: 20px 40px;
@@ -31,9 +40,16 @@
             transform: scale(1.1);
             box-shadow: 0 6px 10px rgba(0, 0, 0, 0.5);
         }
+        button:active {
+            transform: scale(1);
+            box-shadow: 0 6px 10px rgba(200, 0, 0, 0.5); 
+            background-color: red;
+            transition: background-color 0.2s, transform 0.1s;
+            
+        }
     </style>
 </head>
 <body>
-    <button>Nut</button>
+    <button type="button" onclick="audio.play()">FARD</button>
 </body>
 </html>
